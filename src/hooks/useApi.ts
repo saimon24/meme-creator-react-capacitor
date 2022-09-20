@@ -14,26 +14,15 @@ export interface Meme {
 }
 
 export const useApi = () => {
-  const getTrending = (): Promise<TrendingMeme[]> => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(trending)
-      }, 2000)
-    })
-    // const options = {
-    //   method: 'GET',
-    //   url: 'https://reddit-meme.p.rapidapi.com/memes/trending',
-    //   headers: {
-    //     'X-RapidAPI-Key': 'c2ab155906msh00bad49db0b1685p103d71jsn0d57e02981d9',
-    //     'X-RapidAPI-Host': 'reddit-meme.p.rapidapi.com'
-    //   }
-    // };
-    
-    // axios.request(options).then(function (response) {
-    //   console.log(response.data);
-    // }).catch(function (error) {
-    //   console.error(error);
-    // });
+  const getTrending = async (): Promise<TrendingMeme[]> => {
+    const baseUrl = window.location.origin;
+    const result = await axios.get(`${baseUrl}/.netlify/functions/reddit-memes`)
+    return result.data
+    // return new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve(trending)
+    //   }, 2000)
+    // })
   }
 
   const getMemes = (): Promise<Meme[]> => {
