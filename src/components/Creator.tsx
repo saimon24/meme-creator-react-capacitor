@@ -7,7 +7,6 @@ import {
   Container,
   FormControl,
   Grid,
-  IconButton,
   Modal,
   TextField,
   Typography,
@@ -32,7 +31,7 @@ const Creator = () => {
   useEffect(() => {
     const activeMeme = searchParams.get('meme')
     setSelected(activeMeme || '10-Guy')
-  }, [])
+  }, [searchParams])
 
   const memeSelected = (meme: Meme) => {
     setSelected(meme.name)

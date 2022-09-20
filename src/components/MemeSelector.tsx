@@ -28,7 +28,7 @@ const MemeSelector: React.FC<MemeProps> = (props) => {
       setMemes(results)
     }
     loadMemes()
-  }, [])
+  }, [getMemes])
 
   const memeSelected = (meme: Meme) => {
     props.onSelect(meme)

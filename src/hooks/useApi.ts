@@ -1,4 +1,4 @@
-import trending from '../dummy/trending.json'
+// import trending from '../dummy/trending.json'
 import memes from '../dummy/list.json'
 import axios from "axios";
 
@@ -64,8 +64,6 @@ export const useApi = () => {
     console.log('after call: ', result);
 
     return URL.createObjectURL(result.data)
-    
-
   }
 
   return {

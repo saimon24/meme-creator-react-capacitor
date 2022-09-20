@@ -1,4 +1,4 @@
-import { Container, Skeleton, Typography } from '@mui/material'
+import { Container, Skeleton } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { HeroText } from './HeroText'
 import './Home.css'
@@ -24,7 +24,7 @@ const Home = () => {
       setLoading(false)
     }
     loadMemes()
-  }, [])
+  }, [getTrending])
 
   const memeSelected = (meme: Meme) => {
     navigate({
